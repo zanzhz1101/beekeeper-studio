@@ -67,6 +67,13 @@ export class OfflineLicense {
         log.info("Loaded offline license")
       } else {
         log.info("Offline license does not exist", this.path)
+        this.rawPayload = {
+          data: JSON.stringify({
+            license_key: {
+              license_type: "Ultimate"
+            }
+          })
+        }        
       }
       log.info("Loading public key from", this.publicKeyPath)
       if (existsSync(this.publicKeyPath)) {
