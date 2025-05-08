@@ -19,6 +19,7 @@ interface IWindowDialog {
   showOpenDialogSync(any): void
 }
 
+
 export interface NativePlugin {
   clipboard: {
     writeText(text: string): void
